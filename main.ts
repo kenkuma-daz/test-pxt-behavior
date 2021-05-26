@@ -1,7 +1,7 @@
 function 敵生成 (sprite: Sprite) {
     mySprite2 = sprite
     behavior.setFollower(mySprite2, mySprite)
-    behavior.setPattern(mySprite2, behavior.MovePattern.BounceAndTurnOnSideWall)
+    behavior.setPattern(mySprite2, behavior.MovePattern.BounceAndTurnOnSideWall, 29, 200)
     behavior.setAttacker(mySprite2, mySprite, sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -194,7 +194,7 @@ function 敵生成 (sprite: Sprite) {
 }
 function 敵生成2 (sprite: Sprite) {
     mySprite2 = sprite
-    behavior.setPattern(mySprite2, behavior.MovePattern.FlyAndTurnOnSideWall)
+    behavior.setPattern(mySprite2, behavior.MovePattern.FlyAndTurnOnSideWall, 100, 0)
     behavior.setAttacker(mySprite2, mySprite, sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -566,7 +566,7 @@ mySprite = sprites.create(img`
     ....................
     ....................
     `, SpriteKind.Player)
-behavior.setPattern(mySprite, behavior.MovePattern.TurnIfOnWall)
+behavior.setPattern(mySprite, behavior.MovePattern.TurnIfOnWall, 61, 100)
 scene.cameraFollowSprite(mySprite)
 mySprite.setFlag(SpriteFlag.ShowPhysics, true)
 for (let index = 0; index < 2; index++) {
